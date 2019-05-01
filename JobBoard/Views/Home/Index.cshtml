@@ -1,3 +1,4 @@
+@using JobBoard.Models
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,9 +7,7 @@
   </head>
   <body>
     <h1>JobBoard</h1>
-    <ul>
-      <li>@Model.GetJobTitle()</li>
-    </ul>
-    <a href="/jobpostings/new">Add a new job posting.</a>
+    <a href='/jobpostings/new'>Add a new job posting</a>
+    <a href='/jobpostings'></a>
   </body>
 </html>

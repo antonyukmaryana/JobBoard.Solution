@@ -1,3 +1,5 @@
+
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using JobBoard.Models;
 
@@ -9,8 +11,9 @@ namespace JobBoard.Controllers
     [HttpGet("/")]
     public ActionResult Index() 
     {
-      JobPosting newJobPosting = new JobPosting("job title", "description", "contactinfo");
-      return View(newJobPosting); 
+      return View();
+      // List<JobPosting> allJobPostings = JobPosting.GetAll();
+      // return View(allJobPostings);
     }
   }
 }

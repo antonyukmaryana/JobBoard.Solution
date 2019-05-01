@@ -1,0 +1,26 @@
+@using JobBoard.Models
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+    <h1>JobBoard</h1>
+    <ul>
+      @if(Model.Count == 0)
+      {
+        <p>You have no job posting in your job board!</p>
+        
+      }
+      @if(Model.Count !=0)
+      {
+        @foreach (JobPosting posting in Model)
+        {
+          <li>@posting.GetJobTitle()</li>
+        }
+      }
+      </ul>
+    <a href="/jobpostings/new">Add a new job posting.</a>
+  </body>
+</html>
