@@ -21,9 +21,21 @@ namespace JobBoard.Controllers
       }
 
       [HttpGet("/jobpostings/new")]
-      public ActionResult Form()
+      public ActionResult New()
       {
           return View();
+      }
+      [HttpPost("/jobpostings/delete")]
+      public ActionResult DeleteAll()
+      {
+        JobPosting.ClearAll();
+        return View();
+      }
+      [HttpGet("/jobpostings/{id}")]
+      public ActionResult Show(int id)
+      {
+          JobPosting jobposting = JobPosting.Find(id);
+          return View(jobposting);
       }
   }
 }

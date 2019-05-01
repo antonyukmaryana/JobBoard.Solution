@@ -17,10 +17,13 @@
       {
         @foreach (JobPosting posting in Model)
         {
-          <li>@posting.GetJobTitle()</li>
+          <li><a href='/jobpostings/@posting.GetId()'>@posting.GetJobTitle()</a></li>
         }
       }
       </ul>
     <a href="/jobpostings/new">Add a new job posting.</a>
+    <form action="/jobpostings/delete" method="post">
+      <button type="submit" name="button">Clear All Job Postings</button>
+    </form>
   </body>
 </html>
