@@ -6,6 +6,10 @@ namespace JobBoard.Controllers
   {
 
     [Route("/")]
-    public ActionResult Home() { return View(); }
+    public ActionResult Index() 
+    {
+      JobPosting newJobPosting = new JobPosting("job title", "description", "contactinfo");
+      return View(newJobPosting); 
+    }
   }
 }
